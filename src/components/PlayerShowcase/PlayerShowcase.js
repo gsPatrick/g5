@@ -10,15 +10,15 @@ import styles from './PlayerShowcase.module.css';
 const playersData = [
   {
     imageSrc: '/images/player-02.jpg',
-    headline: 'VISÃO DE JOGO. PAIXÃO PURA', 
+    headline: '', 
   },
   {
     imageSrc: '/images/player-03.jpg',
-    headline: 'MOVIMENTO EXPLOSIVO. DOMÍNIO TOTAL.',
+    headline: '',
   },
   {
     imageSrc: '/images/player-01.jpg',
-    headline: 'FOCO ABSOLUTO. TÉCNICA REFINADA',
+    headline: '',
   },
 ];
 

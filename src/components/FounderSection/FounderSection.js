@@ -59,7 +59,7 @@ export default function FounderSection() {
           </motion.h2>
 
           <motion.div variants={textItemVariants}>
-            <h3 className={styles.founderName}>Gabriel "G5" Ferreira</h3>
+            <h3 className={styles.founderName}>Gabriel - GAB</h3>
             <p className={styles.founderTitle}>Fundador & Head Coach</p>
           </motion.div>
           

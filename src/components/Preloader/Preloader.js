@@ -69,7 +69,8 @@ function FootballSphere() {
 // --- Componente Principal do Preloader (Inalterado) ---
 export default function Preloader() {
   const [showField, setShowField] = useState(true);
-  const tagline = "FORJANDO O FUTURO";
+  const tagline = "G5 FUTEBOL"; 
+
 
   useEffect(() => {
     const timer = setTimeout(() => {

@@ -31,7 +31,7 @@ export default function Hero() {
       <div className={styles.videoBackground}>
         <video autoPlay loop muted playsInline key="video-hero">
           {/* Garanta que o caminho para o seu vídeo está correto */}
-          <source src="/videos/stadium-bg.mp4" type="video/mp4" />
+          <source src="/videos/teste1.mp4" type="video/mp4" />
           Seu navegador não suporta o vídeo.
         </video>
       </div>
@@ -44,11 +44,11 @@ export default function Hero() {
         animate="visible"
       >
         <motion.h1 className={styles.headline} variants={itemVariants}>
-          FORJE O SEU LEGADO.
+         G5 FUTEBOL
         </motion.h1>
         
         <motion.p className={styles.subheadline} variants={itemVariants}>
-          Onde o talento encontra a metodologia de elite.
+          Metodologia de Formação de Atletas & Gestão para Escolas e Clubes de Futebol
         </motion.p>
         
         <motion.a 
@@ -62,7 +62,7 @@ export default function Hero() {
           }}
           transition={{ type: 'spring', stiffness: 300, damping: 20 }}
         >
-          Agende sua Avaliação
+          ENTRE EM CONTATO
         </motion.a>
       </motion.div>
 

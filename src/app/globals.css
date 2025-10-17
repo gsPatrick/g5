@@ -18,11 +18,27 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  /* 
+    --- A LINHA DO PROBLEMA FOI REMOVIDA DAQUI ---
+    A linha "overflow-x: hidden;" foi deletada.
+    Esta é a causa principal do 'position: sticky' não funcionar corretamente.
+  */
   background-color: var(--background-dark);
   color: var(--text-primary);
   font-family: 'Inter', sans-serif;
 }
+
+/* 
+  Se você realmente precisa evitar o scroll horizontal, uma abordagem mais segura
+  é aplicá-lo a um contêiner específico que envolve sua página, e não ao body/html.
+  Por exemplo, no seu layout.js, você poderia ter:
+  <body>
+    <div style={{ overflowX: 'hidden' }}>
+      {children}
+    </div>
+  </body>
+  Mas para o nosso efeito funcionar, o ideal é não ter overflow no body.
+*/
 
 a {
   color: inherit;

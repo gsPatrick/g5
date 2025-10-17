@@ -38,7 +38,7 @@ export default function ProfessionalStructure() {
         {/* Camada 1: O Vídeo */}
         <video 
           className={styles.videoElement}
-          src="/videos/structure-reveal.mp4" 
+          src="/videos/testeA2.mp4" 
           autoPlay 
           loop 
           muted 
@@ -57,7 +57,7 @@ export default function ProfessionalStructure() {
           viewport={{ once: true, amount: 0.5 }}
         >
           <motion.h2 variants={textItemVariants}>
-            ESTRUTURA QUE GERA CAMPEÕES
+            NOSSA ESTRUTURA
           </motion.h2>
           <motion.p variants={textItemVariants}>
             Onde o potencial encontra a infraestrutura de elite para florescer.

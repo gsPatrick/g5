@@ -12,60 +12,74 @@
   color: #fff;
   overflow: hidden;
 }
-
 .backgroundImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
 }
-.backgroundImage > div > img {
-  filter: brightness(0.7);
-}
-
+.backgroundImage > div > img { filter: brightness(0.7); }
 .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;
   background: linear-gradient(to top, rgba(0,0,0,1) 20%, transparent 60%);
 }
-
 .headline {
-  position: relative;
-  z-index: 3;
-  font-size: clamp(3rem, 7vw, 5rem);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: -0.04em;
+  position: relative; z-index: 3;
+  font-size: clamp(1.8rem, 4.5vw, 3.5rem); 
+  font-weight: 800; text-transform: uppercase; letter-spacing: -0.04em;
   text-shadow: 0 4px 30px rgba(0,0,0,0.8);
-  margin-bottom: 10vh;
-  padding: 0 2rem;
+  margin-bottom: 10vh; padding: 0 2rem; line-height: 1.3; 
 }
-
 
 /* --- Parte 2: Seção dos Cards --- */
 .cardsContainer {
   background-color: #000;
+  padding: 12vh 5vw;
+  color: #fff;
+}
+
+.cardsHeader {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem auto;
+}
+
+/* A MUDANÇA ESTÁ AQUI */
+.cardsTitle {
   /* 
     A MUDANÇA:
-    Padding superior e inferior reduzidos.
-    de: padding: 15vh 5vw;
-    para: padding: 10vh 5vw;
+    O tamanho mínimo da fonte foi reduzido para evitar transbordamento em telas pequenas.
+    de: clamp(2rem, 5vw, 2.5rem);
+    para: clamp(1.4rem, 4vw, 2.5rem);
   */
-  padding: 10vh 5vw;
+  font-size: clamp(1.4rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  white-space: nowrap; /* Mantém o texto em uma única linha */
+}
+
+.cardsSubtitle {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--text-secondary);
 }
 
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .cardsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .card {
@@ -75,17 +89,20 @@
   padding: 2.5rem;
   text-align: center;
   transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
   transform: translateY(-10px);
   background-color: #222;
-  border-color: #444;
+  border-color: var(--primary-color);
 }
+
 
 .cardIcon {
   margin-bottom: 1.5rem;
-  color: #fff;
+  color: var(--primary-color);
 }
 
 .cardTitle {
@@ -99,4 +116,5 @@
   font-size: 0.9rem;
   line-height: 1.6;
   color: var(--text-secondary);
+  flex-grow: 1;
 }
