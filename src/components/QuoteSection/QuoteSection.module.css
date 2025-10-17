@@ -1,0 +1,29 @@
+/* /src/components/QuoteSection/QuoteSection.module.css */
+.quoteContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #000;
+  color: var(--text-primary);
+  /* 
+    A MUDANÇA:
+    Padding superior reduzido para diminuir o espaço após os cards.
+    de: padding: 20vh 5vw 5vh 5vw;
+    para: padding: 10vh 5vw 5vh 5vw;
+  */
+  padding: 10vh 5vw 5vh 5vw; 
+}
+
+.quoteText {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+  display: inline-block;
+}
+
+.quoteText span {
+  display: inline-block;
+}

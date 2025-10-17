@@ -1,0 +1,103 @@
+/* /src/components/FinalCTA/FinalCTA.module.css */
+.ctaSection {
+  position: relative;
+  height: 90vh;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* CAMADA 1: A GRADE DE FUNDO ANIMADA */
+@keyframes moveGrid {
+  from { background-position: 0 0; }
+  to { background-position: 100px 100px; }
+}
+
+.gridBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 100px 100px;
+  opacity: 0.3;
+  animation: moveGrid 5s linear infinite;
+}
+
+/* CAMADA 2: O VÓRTICE DE LUZ */
+@keyframes pulseVortex {
+  0% {
+    transform: scale(0.8);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 50px rgba(255, 255, 255, 0);
+  }
+  100% {
+    transform: scale(0.8);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.lightVortex {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+  animation: pulseVortex 4s infinite cubic-bezier(0.6, 0, 0.4, 1);
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2rem;
+}
+
+.headline {
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+
+/* O BOTÃO MINIMALISTA E PREMIUM */
+.ctaButton {
+  background-color: transparent;
+  color: #FFFFFF;
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+  /* Borda sutil que se ilumina */
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ctaButton:hover {
+  border-color: #FFFFFF;
+}

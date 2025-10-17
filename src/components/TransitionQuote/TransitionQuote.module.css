@@ -1,0 +1,34 @@
+/* /src/components/TransitionQuote/TransitionQuote.module.css */
+.quoteContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #000;
+  color: var(--text-primary);
+  padding: 10vh 5vw;
+}
+
+.quoteText {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  /* 
+    A MUDANÇA:
+    Aumentamos a largura máxima para acomodar a segunda linha confortavelmente.
+  */
+  max-width: 900px; 
+  text-transform: uppercase;
+}
+
+/* Essencial para a animação por palavra */
+.wordWrapper {
+  display: inline-block;
+  overflow: hidden;
+  margin: 0 0.25em; /* Espaçamento entre as palavras */
+}
+
+.word {
+  display: inline-block;
+}

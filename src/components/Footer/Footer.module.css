@@ -1,0 +1,146 @@
+/* /src/components/Footer/Footer.module.css */
+
+.footerSection {
+  /* 
+    A MUDANÇA #1: FUNDO SUTIL PARA O EFEITO FUNCIONAR
+    Em vez de um preto sólido, criamos um gradiente muito escuro.
+    Isso dá ao 'backdrop-filter' algo para desfocar.
+  */
+  background: radial-gradient(ellipse at bottom, #111 0%, #000 70%);
+  padding: 10vh 5vw;
+  position: relative; /* Para futuros efeitos se necessário */
+  overflow: hidden; /* Garante que o gradiente não vaze */
+}
+
+.footerWrapper {
+  /* 
+    A MUDANÇA #2: O EFEITO GLASSMORPHISM
+    Removemos a cor sólida e aplicamos as propriedades do vidro.
+  */
+  background-color: rgba(26, 26, 26, 0.5); /* Cinza escuro com 50% de transparência */
+  backdrop-filter: blur(20px); /* O desfoque que cria o efeito "fosco" */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil para definir a placa de vidro */
+
+  border-radius: 20px;
+  padding: clamp(3rem, 6vw, 5rem);
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.footerGrid {
+  display: grid;
+  /* 
+    A RESPONSIVIDADE JÁ ESTÁ AQUI:
+    Este grid se adapta automaticamente. Em telas largas, mostra 3 colunas.
+    Conforme a tela diminui, ele pode passar para 2 e depois para 1,
+    sem a necessidade de múltiplos media queries.
+  */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.logoText {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.address {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.linkWithIcon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+.linkWithIcon:hover {
+  color: var(--text-secondary);
+}
+
+.infoTitle {
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+}
+
+.mainInfo {
+  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: color 0.3s ease;
+}
+.mainInfo:hover {
+  color: var(--text-secondary);
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: 1px solid #444;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.socialIcons a:hover {
+  background-color: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Borda superior mais sutil */
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+.footerBottom a:hover {
+  color: #fff;
+}
+
+/* 
+  O MEDIA QUERY GARANTE A RESPONSIVIDADE FINAL
+  para detalhes específicos em telas pequenas.
+*/
+@media (max-width: 768px) {
+  .footerGrid {
+    text-align: center;
+  }
+  .linkWithIcon, .mainInfo, .socialIcons {
+    justify-content: center;
+  }
+  .footerBottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
